@@ -9,9 +9,9 @@
 - Add the backup keylogger to Windows Startup, so it will run automatically at startup in Windows
 ## Usage:
 Quick start
-1. 'git clone https://github.com/Zeal-L/Key-paste-screen-logger'
-2. 'cd Key-paste-screen-logger'
-3. 'pip install pyinstaller'
-4. 'pyinstaller -F -w system.py'
-5. 'cd dist/ && ./system.exe '
+1. `git clone https://github.com/Zeal-L/Key-paste-screen-logger`
+2. `cd Key-paste-screen-logger`
+3. `pip install pyinstaller`
+4. `pyinstaller -F -w system.py`
+5. `cd dist/ && ./system.exe `
 
