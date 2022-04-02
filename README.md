@@ -6,4 +6,4 @@
 - Packaged and collected information sent to a specified email address
 - It will copy itself to the C: drive
 - Disguised as a snake game, it will run the backup keylogger after "GAMEOVER" (Yeah, also for the user)
-- Add the backup keylogger to Windows Startup
+- Add the backup keylogger to Windows Startup, so it will run automatically at startup in Windows
