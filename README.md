@@ -1,5 +1,5 @@
-## An advanced keylogger implemented in Python
-### Features
+## **An advanced keylogger implemented in Python**
+### **Features**
 - Record the output of the full keyboard
 - Also record the content of the paste action
 - Take a screenshot every time user switch between windows
@@ -7,7 +7,7 @@
 - It will copy itself to the C: drive
 - Disguised as a snake game, it will run the backup keylogger after "GAMEOVER" (Yeah, also for the user)
 - Add the backup keylogger to Windows Startup, so it will run automatically at startup in Windows
-### Usage
+### **Usage**
 System requirements
 - MS Windows (tested on 10)
 - Python 2.7
