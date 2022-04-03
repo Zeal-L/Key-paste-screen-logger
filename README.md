@@ -1,4 +1,4 @@
-## **An advanced keylogger implemented in Python**
+## **An Advanced Keylogger Implemented in Python**
 ### **Features**
 - Record the output of the full keyboard
 - Also record the content of the paste action
