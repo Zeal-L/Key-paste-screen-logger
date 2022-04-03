@@ -10,5 +10,4 @@ from email import encoders
 from snake import start_game
 
 import system
-
-# pyinstaller -Fw index.py
+# pyinstaller -F -w -n snake -i Snake.ico index.py

