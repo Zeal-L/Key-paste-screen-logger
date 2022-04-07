@@ -5,8 +5,14 @@ Author: Rajat Biswas
 Project: https://github.com/rajatdiptabiswas/snake-pygame
 """
 
-import pygame, sys, time, random, os
+import os
+import random
+import sys
+import time
+
 import psutil
+import pygame
+
 
 def start_game():
     # Difficulty settings
@@ -31,11 +37,9 @@ def start_game():
     else:
         print('[+] Game successfully initialised')
 
-
     # Initialise game window
     pygame.display.set_caption('Snake Eater')
     game_window = pygame.display.set_mode((frame_size_x, frame_size_y))
-
 
     # Colors (R, G, B)
     black = pygame.Color(0, 0, 0)
@@ -44,16 +48,15 @@ def start_game():
     green = pygame.Color(0, 255, 0)
     blue = pygame.Color(0, 0, 255)
 
-
     # FPS (frames per second) controller
     fps_controller = pygame.time.Clock()
-
 
     # Game variables
     snake_pos = [100, 50]
     snake_body = [[100, 50], [100-10, 50], [100-(2*10), 50]]
 
-    food_pos = [random.randrange(1, (frame_size_x//10)) * 10, random.randrange(1, (frame_size_y//10)) * 10]
+    food_pos = [random.randrange(
+        1, (frame_size_x//10)) * 10, random.randrange(1, (frame_size_y//10)) * 10]
     food_spawn = True
 
     direction = 'RIGHT'
@@ -61,8 +64,8 @@ def start_game():
 
     score = 0
 
-
     # Game Over
+
     def game_over():
         my_font = pygame.font.SysFont('times new roman', 90)
         game_over_surface = my_font.render('YOU DIED', True, red)
@@ -103,7 +106,6 @@ def start_game():
             score_rect.midtop = (frame_size_x/2, frame_size_y/1.25)
         game_window.blit(score_surface, score_rect)
         # pygame.display.flip()
-
 
     # Main logic
     while True:
@@ -156,7 +158,8 @@ def start_game():
 
         # Spawning food on the screen
         if not food_spawn:
-            food_pos = [random.randrange(1, (frame_size_x//10)) * 10, random.randrange(1, (frame_size_y//10)) * 10]
+            food_pos = [random.randrange(
+                1, (frame_size_x//10)) * 10, random.randrange(1, (frame_size_y//10)) * 10]
         food_spawn = True
 
         # GFX
@@ -165,10 +168,12 @@ def start_game():
             # Snake body
             # .draw.rect(play_surface, color, xy-coordinate)
             # xy-coordinate -> .Rect(x, y, size_x, size_y)
-            pygame.draw.rect(game_window, green, pygame.Rect(pos[0], pos[1], 10, 10))
+            pygame.draw.rect(game_window, green,
+                             pygame.Rect(pos[0], pos[1], 10, 10))
 
         # Snake food
-        pygame.draw.rect(game_window, white, pygame.Rect(food_pos[0], food_pos[1], 10, 10))
+        pygame.draw.rect(game_window, white, pygame.Rect(
+                        food_pos[0], food_pos[1], 10, 10))
 
         # Game Over conditions
         # Getting out of bounds

