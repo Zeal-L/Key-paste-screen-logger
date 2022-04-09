@@ -39,5 +39,5 @@
 |`RECEIVER`|Email address for receiving packaged information.|
 
 **Other**
-- This project was used in my COMP6841 something awesome project, if you are interested you can watch my demo video here:
+- This project was used as my COMP6841 something awesome project, if you are interested you can watch my demo video here:
   - https://www.youtube.com/watch?v=SPiu6UsOxs4
