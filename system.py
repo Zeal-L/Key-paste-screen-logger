@@ -127,7 +127,6 @@ def KBevent(event):
         os.remove(addr)
         shutil.rmtree(pic_path)
         win32api.PostQuitMessage()
-    
     return True
 
 
