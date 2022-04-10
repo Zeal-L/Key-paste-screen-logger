@@ -18,7 +18,7 @@
 1. `git clone https://github.com/Zeal-L/Key-paste-screen-logger`
 2. `cd Key-paste-screen-logger`
 3. `pip install requirements.txt`
-4. `pyinstaller -F -w -n snake -i Snake.ico system.py`
+4. `pyinstaller -F -w -n snake system.py`
 5. `cd dist/ && ./snake.exe `
 
 **Advanced Packing**
@@ -27,7 +27,7 @@
 - You may need to install the corresponding Python version of Visual Studio to successfully convert py to pyd, otherwise it will report "Unable to find vcvarsall.bat" error
 1. `pip install requirements.txt`
 2. `python shell.py build_ext --inplace`
-3. `pyinstaller -F -w -n snake -i Snake.ico index.py`
+3. `pyinstaller -F -w -n snake index.py`
 4. `cd dist/ && ./snake.exe `
 
 
