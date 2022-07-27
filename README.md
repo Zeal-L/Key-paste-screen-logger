@@ -18,7 +18,7 @@
 1. `git clone https://github.com/Zeal-L/Key-paste-screen-logger`
 2. `cd Key-paste-screen-logger`
 3. `pip install requirements.txt`
-4. `pyinstaller -F -w -n snake -i Snake.ico system.py`
+4. `pyinstaller -F -w -n snake system.py`
 5. `cd dist/ && ./snake.exe `
 
 **Advanced Packing**
@@ -27,7 +27,7 @@
 - You may need to install the corresponding Python version of Visual Studio to successfully convert py to pyd, otherwise it will report "Unable to find vcvarsall.bat" error
 1. `pip install requirements.txt`
 2. `python shell.py build_ext --inplace`
-3. `pyinstaller -F -w -n snake -i Snake.ico index.py`
+3. `pyinstaller -F -w -n snake index.py`
 4. `cd dist/ && ./snake.exe `
 
 
@@ -37,3 +37,7 @@
 |`SEND_INTERVAL`|How many times the user does window switches are needed for the keylogger to compress all the information and send it to the hacker.|
 |`E_ADDRESS` & `E_PASSWORD`| Mailboxes used to send packaged messages, If you use Google Mail, note that you must enable IMAP Access and "Control access to less secure apps" for your Gmial.|
 |`RECEIVER`|Email address for receiving packaged information.|
+
+**Other**
+- This project was used as my COMP6841 something awesome project, if you are interested you can watch my demo video here:
+  - https://www.youtube.com/watch?v=SPiu6UsOxs4
